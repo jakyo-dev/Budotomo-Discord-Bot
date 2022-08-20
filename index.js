@@ -66,7 +66,7 @@ async function starteUmfragen() {
 
     // https://www.npmjs.com/package/node-schedule
     // SECONDS(OPT) MINUTES HOURS DAYOFMONTH MONTH DAYOFWEEK(0-7)
-    // Achtung: Zeitzone vom Replit-Server ist anders (Stunden)!
+    // Achtung: Zeitzone vom jeweiligen Server ist meist anders (Stunden)!
     const zeitpunkt = "0 15 * * 7"
 
     schedule.scheduleJob(zeitpunkt, async () => {
