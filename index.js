@@ -48,6 +48,7 @@ client.on("interactionCreate", async (interaction) => {
     if (commandName === "pausiereteilnahmeumfragen") {
         try {
             schedule.gracefulShutdown()
+            console.log("Umfragen pausiert")
             interaction.reply("Umfragen pausiert")
         } catch (error) {
             await interaction.reply("Irgendetwas ist schiefgelaufen...")
@@ -80,8 +81,9 @@ async function starteUmfragen() {
             await message.react("<:Montag:1010187185267421184>")
             await message.react("<:Mittwoch:1010187341882720317>")
         } catch (error) {
-            console.error("One of the emojis failed to react:", error)
+            console.error(error)
         }
+        console.log("Umfragen aktiv")
     })
 }
 
