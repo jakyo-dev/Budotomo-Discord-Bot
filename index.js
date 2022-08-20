@@ -83,8 +83,8 @@ async function starteUmfragen() {
         } catch (error) {
             console.error(error)
         }
-        console.log("Umfragen aktiv")
     })
+    console.log("Umfragen aktiv")
 }
 
 client.login(TOKEN)
