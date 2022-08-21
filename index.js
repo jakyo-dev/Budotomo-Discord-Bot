@@ -76,7 +76,7 @@ async function starteUmfragen() {
         // })
         try {
             const message = await channel.send(
-                `@everyone Trainingsteilnahme \n M für ${montag} \n W für ${mittwoch}`
+                `Trainingsteilnahme @everyone \n M für ${montag} \n W für ${mittwoch}`
             )
             await message.react("<:Montag:1010187185267421184>")
             await message.react("<:Mittwoch:1010187341882720317>")
