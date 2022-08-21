@@ -68,7 +68,7 @@ async function starteUmfragen() {
     // SECONDS(OPT) MINUTES HOURS DAYOFMONTH MONTH DAYOFWEEK(0-7)
     // Achtung: Zeitzone vom jeweiligen Server ist meist anders (Stunden)!
     // const zeitpunkt = "0 15 * * 7"
-    const zeitpunkt = "0 16 10 * 7"
+    const zeitpunkt = "15 16 * * 7"
 
     schedule.scheduleJob(zeitpunkt, async () => {
         // const message = await channel.send({
