@@ -60,14 +60,15 @@ async function starteUmfragen() {
     const testChannel = "1009936933385941044"
     const umfrageChannel = "997867816306872400"
 
-    const channel = client.channels.cache.get(testChannel)
+    const channel = client.channels.cache.get(umfrageChannel)
 
     // channel.send("Umfragen aktiv")
 
     // https://www.npmjs.com/package/node-schedule
     // SECONDS(OPT) MINUTES HOURS DAYOFMONTH MONTH DAYOFWEEK(0-7)
     // Achtung: Zeitzone vom jeweiligen Server ist meist anders (Stunden)!
-    const zeitpunkt = "0 15 * * 7"
+    // const zeitpunkt = "0 15 * * 7"
+    const zeitpunkt = "0 16 10 * 7"
 
     schedule.scheduleJob(zeitpunkt, async () => {
         // const message = await channel.send({
