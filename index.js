@@ -62,19 +62,20 @@ async function starteUmfragen() {
 
     const channel = client.channels.cache.get(umfrageChannel)
 
-    // channel.send("Umfragen aktiv")
-
     // https://www.npmjs.com/package/node-schedule
     // SECONDS(OPT) MINUTES HOURS DAYOFMONTH MONTH DAYOFWEEK(0-7)
     // Achtung: Zeitzone vom jeweiligen Server ist meist anders (Stunden)!
     // const zeitpunkt = "0 15 * * 7"
-    const zeitpunkt = "15 16 * * 7"
+
+    const MINUTES = "*"
+    const HOURS = 15
+    const DAYOFMONTH = "*"
+    const MONTH = "*"
+    const DAYOFWEEK = 7
+
+    const zeitpunkt = `${MINUTES} ${HOURS} ${DAYOFMONTH} ${MONTH} ${DAYOFWEEK}`
 
     schedule.scheduleJob(zeitpunkt, async () => {
-        // const message = await channel.send({
-        //     content: `@everyone Trainingsteilnahme \n M für ${montag} \n W für ${mittwoch}`,
-        //     fetchReply: true,
-        // })
         try {
             const message = await channel.send(
                 `Trainingsteilnahme @everyone \n M für ${montag} \n W für ${mittwoch}`
