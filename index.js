@@ -57,7 +57,7 @@ client.on("interactionCreate", async (interaction) => {
 })
 
 async function starteUmfragen() {
-    const testChannel = "1009936933385941044"
+    // const testChannel = "1009936933385941044"
     const umfrageChannel = "997867816306872400"
 
     const channel = client.channels.cache.get(umfrageChannel)
@@ -67,7 +67,7 @@ async function starteUmfragen() {
     // Achtung: Zeitzone vom jeweiligen Server ist meist anders (Stunden)!
     // const zeitpunkt = "0 15 * * 7"
 
-    const MINUTES = "*"
+    const MINUTES = 0
     const HOURS = 15
     const DAYOFMONTH = "*"
     const MONTH = "*"
@@ -78,7 +78,9 @@ async function starteUmfragen() {
     schedule.scheduleJob(zeitpunkt, async () => {
         try {
             const message = await channel.send(
-                `Trainingsteilnahme @everyone \n M für ${montag} \n W für ${mittwoch}`
+                `Trainingsteilnahme @everyone \n
+                - M für ${montag} \n
+                - W für ${mittwoch}`
             )
             await message.react("<:Montag:1010187185267421184>")
             await message.react("<:Mittwoch:1010187341882720317>")
