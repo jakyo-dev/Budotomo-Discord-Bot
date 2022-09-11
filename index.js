@@ -78,8 +78,8 @@ async function starteUmfragen() {
     schedule.scheduleJob(zeitpunkt, async () => {
         try {
             const message = await channel.send(
-                `Trainingsteilnahme @everyone \n
-                - M für ${montag} \n
+                `Trainingsteilnahme @everyone
+                - M für ${montag}
                 - W für ${mittwoch}`
             )
             await message.react("<:Montag:1010187185267421184>")
