@@ -77,10 +77,12 @@ async function starteUmfragen() {
 
     schedule.scheduleJob(zeitpunkt, async () => {
         try {
+            const genMsg = "Trainingsteilnahme @everyone"
+            const optionMonday = "\n- M für " + montag
+            const optionWednesday = "\n- M für " + mittwoch
+
             const message = await channel.send(
-                `Trainingsteilnahme @everyone
-                - M für ${montag}
-                - W für ${mittwoch}`
+                genMsg + optionMonday + optionWednesday
             )
             await message.react("<:Montag:1010187185267421184>")
             await message.react("<:Mittwoch:1010187341882720317>")
